@@ -21,7 +21,7 @@ gulp.task('lint', function() {
 gulp.task('scss', function() {
     gulp.src('./src/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('.dist/css'));
+        .pipe(gulp.dest('./dist/css'));
 });
 
 // 合并，压缩文件
@@ -62,12 +62,12 @@ gulp.task('indexHtmlmin',function(){
     };
     gulp.src('./src/index.html')
         .pipe(htmlmin(options))
-        .pipe(gulp.dest('./dist/index.html'));
+        .pipe(gulp.dest('./dist'));
 })
 
 // 默认任务
 gulp.task('default', function(){
-    gulp.run('lint', 'sass', 'scripts','htmlmin','indexHtmlmin');
+    gulp.run('lint', 'scss', 'scripts','htmlmin','indexHtmlmin');
 
     // 监听文件变化
     gulp.watch('./src/js/*.js', function(){

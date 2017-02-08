@@ -1,0 +1,22 @@
+{
+  "name": "trpg-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoten01/TRPGBOX.git"
+  },
+  "keywords": [
+    "trpg"
+  ],
+  "author": "hoten01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoten01/TRPGBOX/issues"
+  },
+  "homepage": "https://github.com/hoten01/TRPGBOX#readme"
+}

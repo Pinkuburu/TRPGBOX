@@ -1,23 +1,20 @@
-const querystring  = require("querystring"),
-    fs = require('fs');
+const querystring = require("querystring"),
+    fs = require('fs'),
+    path = require('path');
 
 
-function start(response){
+function start(req, res) {
     console.log("Request handler 'start' was called.");
 
-    var body = '<html>'+
-        '<head>'+
-        '<meta http-equiv="Content-Type" content="text/html; '+
-        'charset=UTF-8" />'+
-        '</head>'+
-        '<body>'+
-        '<h1>欢迎来到TRPGBOX!</h1>'+
-        '</body>'+
-        '</html>';
+    fs.readFile(path.resolve(__dirname, '../../../web/src/index.html'), (err,data) => {
+        res.writeHead(200, {
+            "Content-Type": "text/html"
+        });
+        res.write(data);
+        res.end();
+    })
 
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(body);
-    response.end();
+
 }
 
 module.exports.start = start;

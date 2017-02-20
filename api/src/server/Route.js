@@ -4,9 +4,9 @@ function route(handle,pathname,req,res) {
         handle[pathname](req,res);
     } else{
         console.log('服务器未找到该请求');
-        response.writeHead(404,{"Content-Type":"text/html"});
-        response.write('404 Not Found');
-        response.end();
+        res.writeHead(404,{"Content-Type":"text/html"});
+        res.write('404 Not Found');
+        res.end();
     }
 }
 

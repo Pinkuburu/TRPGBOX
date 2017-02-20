@@ -4,7 +4,7 @@ const querystring = require("querystring"),
 
 
 function start(req, res) {
-    console.log("Request handler 'start' was called.");
+    // console.log("Request handler 'start' was called.");
 
     fs.readFile(path.resolve(__dirname, '../../../web/src/index.html'), (err,data) => {
         res.writeHead(200, {
